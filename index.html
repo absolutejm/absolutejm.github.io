@@ -58,7 +58,14 @@
 
     .hero-image {
       position: relative;
-      background: #111 url("jmme.png") center right / cover no-repeat;
+      background-color: #111;
+      background-image: url("jmme.png");
+      background-repeat: no-repeat;
+
+      /* zoomed in crop */
+      background-size: 175%;
+      background-position: 35% center;
+
       min-height: 260px;
     }
 
@@ -75,6 +82,12 @@
     }
 
     @media (max-width: 880px) {
+      .hero-image {
+        /* slightly tighter crop on mobile */
+        background-size: 190%;
+        background-position: center top;
+      }
+
       .hero-image::after {
         background: linear-gradient(
           to bottom,
@@ -245,58 +258,9 @@
       <div class="intro">
         <h1>Songs about craving, collapse and trying again.</h1>
         <p>
-          Start with the new single on Spotify. If it hits, follow the artist there
+          Start with the new single on Spotify. If it hits, follow me there
           so you do not miss the next release.
         </p>
 
         <div class="cta-row">
-          <a class="btn-main"
-             href="YOUR_SPOTIFY_MAIN_LINK"
-             target="_blank" rel="noopener">
-            Listen on Spotify
-          </a>
-          <a class="btn-ghost"
-             href="YOUR_SMART_LINK_OR_OTHER_PLATFORMS"
-             target="_blank" rel="noopener">
-            All platforms
-          </a>
-        </div>
-      </div>
-
-      <section class="section">
-        <div>
-          <p class="section-title">New release</p>
-          <p class="track-title">Desperate (Radio Edit)</p>
-        </div>
-
-        <iframe
-          src="YOUR_SPOTIFY_TRACK_EMBED_URL"
-          height="152"
-          loading="lazy"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-        </iframe>
-
-        <div class="other-links">
-          <span>More music:</span>
-          <a href="LINK_TO_CRUMBLE" target="_blank" rel="noopener">Crumble Into Dust</a>
-          <a href="LINK_TO_EL_DORADO" target="_blank" rel="noopener">El Dorado</a>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>
-          If you want to keep up, follow on Spotify or Instagram.
-        </p>
-        <div class="social">
-          <a href="YOUR_IG_LINK" target="_blank" rel="noopener" aria-label="Instagram">
-            <span>Instagram</span>IG
-          </a>
-          <a href="mailto:your@email.com" aria-label="Email">
-            <span>Email</span>@
-          </a>
-        </div>
-      </footer>
-    </section>
-  </main>
-</body>
-</html>
+          <a
