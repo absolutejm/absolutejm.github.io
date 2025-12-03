@@ -56,46 +56,46 @@
       }
     }
 
+  .hero-image {
+    position: relative;
+    background-color: #111;
+    background-image: url("jmme.png");
+    background-repeat: no-repeat;
+  
+    /* Try a slightly looser zoom, push face closer to the right edge */
+    background-size: 155%;
+    background-position: 70% center;
+  
+    min-height: 260px;
+  }
+  
+  .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(5, 6, 8, 0.96),
+      rgba(5, 6, 8, 0.6),
+      rgba(5, 6, 8, 0.05)
+    );
+  }
+  
+  @media (max-width: 880px) {
     .hero-image {
-      position: relative;
-      background-color: #111;
-      background-image: url("jmme.png");
-      background-repeat: no-repeat;
-
-      /* zoomed in crop */
-      background-size: 175%;
-      background-position: 35% center;
-
-      min-height: 260px;
+      /* a bit tighter on mobile so hat + face fill more height */
+      background-size: 185%;
+      background-position: center 25%;
     }
-
+  
     .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
       background: linear-gradient(
-        to right,
-        rgba(5, 6, 8, 0.95),
-        rgba(5, 6, 8, 0.55),
-        rgba(5, 6, 8, 0)
+        to bottom,
+        rgba(5, 6, 8, 0.7),
+        rgba(5, 6, 8, 0.9)
       );
     }
-
-    @media (max-width: 880px) {
-      .hero-image {
-        /* slightly tighter crop on mobile */
-        background-size: 190%;
-        background-position: center top;
-      }
-
-      .hero-image::after {
-        background: linear-gradient(
-          to bottom,
-          rgba(5, 6, 8, 0.7),
-          rgba(5, 6, 8, 0.9)
-        );
-      }
-    }
+  }
 
     .content {
       padding: 40px 40px 30px;
